@@ -1,0 +1,30 @@
+server:
+  port: 28080
+
+spring:
+#  profiles:
+#   active: local2
+  application:
+    name: api-service 
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 2
+      shutdown-timeout: 200ms
+    ssl:  false
+    timeout: 2000 
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true # 캐쉬 사용
+    serviceUrl:
+      defaultZone: http://localhost:23001/eureka/
+      enabled: true
+              
+       
