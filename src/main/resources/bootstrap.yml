@@ -2,10 +2,8 @@ server:
   port: 28080
 
 spring:
-#  profiles:
-#   active: local2
   application:
-    name: api-service 
+    name: api-service
   redis:
     host: 127.0.0.1
     port: 6379
@@ -16,15 +14,13 @@ spring:
         max-wait: -1ms
         min-idle: 2
       shutdown-timeout: 200ms
-    ssl:  false
-    timeout: 2000 
-
+    ssl: false
+    timeout: 2000
+  
 eureka:
   client:
     registerWithEureka: true
-    fetchRegistry: true # 캐쉬 사용
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:23001/eureka/
-      enabled: true
-              
-       
+            defaultZone: http://127.0.0.1:23001/eureka/
+            enabled: true
